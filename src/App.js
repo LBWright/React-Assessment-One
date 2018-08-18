@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import Todos, { TodoList, NewTodoForm } from './components/Todo';
+import styled from 'styled-components';
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <AppWrapper>
         <Todos>
           {({ todos, addTodo, completeTodo, removeCompleted }) => (
             <Fragment>
@@ -14,9 +15,18 @@ class App extends Component {
             </Fragment>
           )}
         </Todos>
-      </div>
+      </AppWrapper>
     );
   }
 }
 
 export default App;
+
+const AppWrapper = styled.div`
+  box-sizing: border-box;
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
