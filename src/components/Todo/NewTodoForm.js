@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 class NewTodoForm extends Component {
   state = {
     title: ''
   };
 
+  static propTypes = {
+    addTodo: PropTypes.func.isRequired
+  };
   handleInput = ({ target: { value } }) => {
     this.setState({ title: value });
   };
