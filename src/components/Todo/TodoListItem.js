@@ -30,7 +30,7 @@ const ListWrapper = styled.div`
 
 const Item = styled.h4`
   text-decoration: ${props => (props.completed ? 'line-through' : 'none')};
-  font-size: 28px;
+  font-size: 32px;
 `;
 
 const Button = styled.button`

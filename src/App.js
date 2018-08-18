@@ -9,8 +9,10 @@ class App extends Component {
         <Todos>
           {({ todos, addTodo, completeTodo, removeCompleted }) => (
             <Fragment>
-              <NewTodoForm addTodo={addTodo} />
-              <button onClick={removeCompleted}>Clear Completed</button>
+              <HeaderWrapper>
+                <NewTodoForm addTodo={addTodo} />
+                <Button onClick={removeCompleted}>Clear Completed</Button>
+              </HeaderWrapper>
               <TodoList completeTodo={completeTodo} todos={todos} />
             </Fragment>
           )}
@@ -24,9 +26,30 @@ export default App;
 
 const AppWrapper = styled.div`
   box-sizing: border-box;
-  width: 800px;
-  margin: 0 auto;
+  width: 880px;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+`;
+
+const HeaderWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Button = styled.button`
+  height: 60px;
+  width: 220px;
+  background: #ff9999;
+  color: white;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 2px;
+  &:hover {
+    border: 3px solid #ff9999;
+    color: #ff9999;
+    background: white;
+  }
 `;
