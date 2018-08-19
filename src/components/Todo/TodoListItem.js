@@ -5,8 +5,11 @@ import styled from 'styled-components';
 const TodoListItem = ({ id, title, completed, completeTodo }) => {
   return (
     <ListWrapper>
-      <Item completed={completed}>{title}</Item>
+      <Item className="title" completed={completed}>
+        {title}
+      </Item>
       <Button
+        className="complete-btn"
         disabled={completed}
         onClick={() => {
           completeTodo(id);
@@ -35,7 +38,7 @@ const ListWrapper = styled.div`
   margin: 0 auto;
 `;
 
-const Item = styled.h4`
+const Item = styled.div`
   text-decoration: ${props => (props.completed ? 'line-through' : 'none')};
   font-size: 32px;
 `;

@@ -19,6 +19,8 @@
     "enzyme": "^3.4.4",
     "enzyme-adapter-react-16": "^1.2.0",
     "jest": "21",
-    "jest-cli": "21"
+    "jest-cli": "21",
+    "jsdom": "^11.12.0",
+    "jsdom-global": "^3.0.2"
   }
 }

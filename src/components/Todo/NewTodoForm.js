@@ -16,6 +16,9 @@ class NewTodoForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    if (this.state.title === '') {
+      return;
+    }
     const todo = {
       id: Date.now(),
       title: this.state.title,
@@ -27,14 +30,15 @@ class NewTodoForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="new-todo" onSubmit={this.handleSubmit}>
         <Input
+          className="input-todo"
           type="text"
           value={this.state.title}
           onChange={this.handleInput}
           placeholder="Add a Todo"
         />
-        <Button>Add New</Button>
+        <Button className="add-todo">Add New</Button>
       </form>
     );
   }
