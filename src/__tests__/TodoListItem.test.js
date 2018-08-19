@@ -28,6 +28,4 @@ describe('<TodoListItem />', () => {
     wrapper.find('.complete-btn').simulate('click');
     expect(completeTodoSpy).toHaveBeenCalled();
   });
-
-  it('should change props.completed to true on button click', () => {});
 });
